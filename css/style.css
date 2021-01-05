@@ -1,0 +1,769 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root{
+    --font-title: 'Anton', sans-serif;
+    --font-content: 'Special Elite', cursive;
+
+}
+
+/************************* GENERAL ********************************/
+/*******************************************************************/
+
+*{
+    font-family: var(--font-content);
+    color:#000;
+}
+
+section h2{
+    font-family: var(--font-title);
+    background: linear-gradient(to right , #000 , #004d7a, #008793, #00bf72, #a8eb12 );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 50px;
+    
+}
+
+
+.bg-img{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 10px solid #fff;
+    border-image: linear-gradient(to right , #000 , #004d7a, #008793, #00bf72, #a8eb12 ) 1;
+    text-transform: uppercase;
+}
+
+.more{
+    margin:150px 0;
+}
+
+/************************ HEADER ********************/
+/*****************************************************/
+
+header #logo img{
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+}
+
+@media screen and (max-width: 768px){
+    header #logo img{
+        width: 40%;
+    }
+
+}
+
+@media screen and (max-width: 430px){
+    header #logo img{
+        width: 50%;
+    }
+
+}
+
+header nav{
+    margin:30px 0;
+    text-transform: uppercase;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+header nav ul a{
+    color: #000;
+    position:relative;
+}
+
+header nav ul a:hover{
+    color: #000;
+    text-decoration: none;
+
+}
+
+header nav ul li{
+    list-style: none;
+    font-size: 1.2em;
+}
+
+header nav li a::after{
+    content: "";
+    width:100%;
+    height:4px;
+    background-image: linear-gradient(to right , #000 0, #004d7a, #008793, #00bf72, #a8eb12 100%);
+    position: absolute;
+    left:0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    bottom:0;
+    transform-origin:left;
+}
+
+
+header nav li a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+header nav li a:hover::after{
+    transform: scaleX(1);
+}
+
+/********************* BUTTON *********************/
+#button {
+    display: inline-block;
+    background-color:#a8eb12;
+    padding: 8px 13px;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    margin: 15px;
+  }
+
+  #button:hover {
+    cursor: pointer;
+ 
+  }
+
+
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+
+/************* MOBILE *************/
+
+.mobileNav{
+    display: none;
+	padding:30px;	
+}
+
+
+.mobileNav li a{
+    color: black;
+	text-decoration: none;
+}
+
+.mobileNav li a:hover{
+    opacity: 0.7;
+}
+
+.mobileNav li{
+    list-style-type: square;
+    color: #fff;
+    padding:3px;
+}
+
+
+
+/********************** HAMBURGER **************/
+.hamburger{
+    background-color: transparent;
+    border:0;
+    display: none;
+    cursor: pointer;
+    margin:0 auto;
+}
+
+.hamburger i:hover{
+    color:  #a8eb12 ;
+}
+
+.hamburger i{
+    font-size:1.4em;
+
+}
+
+.hamburger:focus{
+    outline: none;
+}
+
+@media screen and (max-width: 768px){
+ 	header nav{
+	 	display: none;
+	}
+
+	.hamburger{
+         display: block;
+	}
+
+}
+/****************************** ICONS ***********************/
+.icons{
+    margin-top: 40px;;
+    position: fixed;
+    z-index: 1100;
+    right: 15px;
+    
+}
+
+
+.icons li{
+    list-style-type: none;
+    background-color:#a8eb12;
+    padding: 5px 13px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.icons li:hover{
+    opacity: 0.7;
+}  
+
+
+/*********************** MAIN *****************************/
+/***********************************************************/
+
+/********************** ABOUT ***************************/
+
+#about .bg-img{
+    background: url("../img/mountains.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1024px){
+    #about .bg-img{
+        background-attachment: scroll;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-position: bottom;
+        height: 300px;
+    }
+}
+
+
+#about h3, #about h4{
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    #about h3{
+        margin-top: 100px;
+    }
+    
+}
+
+#about .description img{
+    width: 70%;
+    height: auto;
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#about .description p{
+    padding: 20px 50px 50px 50px;
+}
+
+#about .description .row{
+    display: flex;
+    align-items: center; 
+}
+
+/*************************** PORTFOLIO ******************/
+
+#portfolio .bg-img{
+    background: url("../img/mountains02.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1024px){
+    #portfolio .bg-img{
+        background-attachment: scroll;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-position: bottom;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #portfolio .container{
+        padding: 0 25px;
+    }
+
+}
+
+/**************** OVERLAY *****************/
+/**** OVERLAY ZOOM ****/
+
+img#displayImg{
+	padding:0;
+}
+
+.item{
+    position: relative;
+}
+
+.item:hover{
+    cursor: pointer;
+    z-index: 100;
+}
+
+.item:hover .overlay {
+    -webkit-transition: .8s ease;
+    transition: .8s ease;
+    opacity: 0.8;
+}
+
+.item a p:nth-of-type(2){
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    background-color: #fff;
+    opacity: 0;
+    overflow: hidden;
+    width: 50%;
+    height: 50%;
+    /* -webkit-transition: .3s ease;
+    transition: .3s ease; */
+   transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+  }
+  
+.text {
+    color:#000;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.item img{
+    width: 100%;
+    display:flex;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    display: block;
+    height: auto;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.item img:hover{
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+
+.zoom {
+    display: none; /* Hidden by default */
+    position: fixed;  /* Stay in place */
+    /* align-items: center; */
+    justify-content: center;
+    z-index: 1000; /* Sit on top */
+    padding: 50px 0; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(51,51,51,0.9); 
+}
+
+@media screen and (max-width: 1024px){
+    .zoom{
+        flex-direction: column-reverse;
+    }
+    .close-btn{
+        margin-left: auto;
+    }
+
+}
+/* Modal Content (Image) */
+.zoom img {
+     margin: auto 0;
+     display: block;
+     width: 100%;
+     max-width: 700px;
+     height: auto;
+     object-fit: contain;
+}
+
+.description-project{
+    padding: 0 45px 45px 45px;
+}
+
+@media screen and (max-width: 1024px){
+    .description-project{
+        padding: 0 0 50px 0;
+    }
+
+}
+
+.description-project a{
+    color: #a8eb12;
+    text-decoration: underline;
+}
+
+.description-project a:hover{
+    color: #a8eb12;
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+     /* margin: auto; */
+     /* display: block; */
+     width: 100%;
+     max-width:700px;
+     color: #a8eb12;
+     /* padding: 15px 0 15px 40px; */
+     /* background-color: #000; */
+}
+
+#description {
+    /* margin: auto; */
+    /* display: block; */
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+    color: #a8eb12;
+    /* padding: 10px 0; */
+    /* background-color: #fff; */
+    /* padding: 40px; */
+}
+
+
+
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption, #description {
+   animation-name: zoom;
+   animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* Close button */
+
+.close-btn i{
+    background-color: #fff;
+    padding: 8px 12px;
+    border-radius: 100%;
+    font-size: 1.5em;
+}
+
+.close-btn i:hover, .close-btn i:focus{
+    color: #a8eb12;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 430px){
+
+    .close i{
+       right:0;
+       /* margin: 0 auto; */
+    }
+
+}
+
+
+/***************************** SKILLS ************************/
+
+
+#skills .bg-img{
+    background: url("../img/mountains03.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1024px){
+    #skills .bg-img{
+        background-attachment: scroll;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-position: bottom;
+        height: 300px;
+    }
+}
+
+#skills .download, #photo .download{
+    margin:50px auto;
+    
+}
+
+#skills a:hover, #photo a:hover{
+    text-decoration: none;
+    padding:20px 30px;
+}
+
+#skills a, #photo a{
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(to right , #000 , #004d7a, #008793, #00bf72, #a8eb12);
+    padding: 15px 25px;
+    font-family: var(--font-title);
+    transition: padding 0.5s;
+
+}
+
+
+
+
+/********************************** PHOTO ********************/
+
+#photo .bg-img{
+    background: url("../img/mountains05.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1024px){
+    #photo .bg-img{
+        background-attachment: scroll;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-position: bottom;
+        height: 300px;
+    }
+}
+
+#photo p{
+    width: 60%;
+    display: block;
+    margin: 0 auto 100px auto;
+}
+
+.gallery .col-lg-4 {
+    padding: 5px 10px;
+}
+
+.gallery .col-lg-4 div{
+    display: inline-block;
+    overflow: hidden; 
+}
+
+.gallery img{
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: all 0.5s;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+
+}
+.gallery .col-lg-4 div:hover img{
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
+}
+
+
+.gallery img:hover{
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
+/********************** CONTACT *****************/
+
+#contact .bg-img{
+    background: url("../img/mountains04.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1024px){
+    #contact .bg-img{
+        background-attachment: scroll;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        background-position: bottom;
+        height: 300px;
+    }
+}
+
+#contact p{
+    text-align: right;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 767px){
+    #contact p{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 425px){
+    #contact form ul{
+        margin:0 auto;
+        padding-left: 0;
+
+    }
+}
+
+#contact form li{
+    list-style-type: none;
+    margin:15px 0;
+}
+
+@media screen and (max-width: 425px){
+    #contact form li{
+        border-radius: 0;
+
+    }
+}
+
+#contact form input{
+    width: 70%;
+    padding: 5px;
+    border-top:2px solid #000;
+    border-left: 2px solid #000;
+    border-bottom: none;
+    border-right: none;
+}
+
+@media screen and (max-width: 500px){
+
+    #contact form input{
+        width: 100%;
+        border-radius: 0;
+    }
+
+}
+
+#contact form textarea{
+    width: 70%;
+    border-top:2px solid #000;
+    border-left: 2px solid #000;
+    border-bottom: none;
+    border-right: none;
+}
+
+@media screen and (max-width: 500px){
+
+    #contact form textarea{
+        width: 100%;
+        border-radius: 0;
+    }
+
+}
+
+#contact form button{
+    width: 70%;
+    border:none;
+    background-image: linear-gradient(to right , #000 0, #004d7a, #008793, #00bf72, #a8eb12 100%);
+    padding: 7px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: var(--font-title);
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 500px){
+
+    #contact form button{
+        margin-left: 0;
+        width: 100%;
+    }
+
+}
+
+/******************* MENTIONS L2GALES ******************/
+
+#mentionslegales{
+    margin: 150px 0;
+}
+
+#mentionslegales #retour{
+    padding-bottom: 50px;
+}
+
+#mentionslegales #retour a{
+    font-family: var(--font-title);
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: underline;
+}
+/******************************* FOOTER ******************/
+/**********************************************************/
+
+footer{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding:50px 0;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+footer ul li{
+
+    list-style: none;
+    padding: 0 30px;
+}
+
+footer ul li a{
+    color: #a8eb12;
+}
+
+footer ul li a:hover{
+    text-decoration: none;
+    color: #a8eb12;
+    opacity: 0.7;
+}
+
+footer p{
+    color: #fff;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer a:hover{
+    color: #ffffff;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
